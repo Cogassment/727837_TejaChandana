@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,7 +23,7 @@ namespace Paginationproject.Controllers
             string sql = "SELECT * FROM PaginationTable";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
-            List<PaginationModel> emp1 = new List<PaginationModel>();
+            List<PaginationModel> employee = new List<PaginationModel>();
             PaginationModel details;
 
             using (SqlDataReader read = cmd.ExecuteReader())
@@ -37,11 +37,11 @@ namespace Paginationproject.Controllers
                     details.EmailId = read["EmailId"].ToString();
                     details.ProjectId = int.Parse(read["ProjectId"].ToString());
                     details.ProjectName = read["ProjectName"].ToString();
-                    emp1.Add(details);
+                    employee.Add(details);
 
                 }
             }
-            return Json(emp1);
+            return Json(employee);
         }
     }
 }
