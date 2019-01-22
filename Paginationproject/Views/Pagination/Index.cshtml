@@ -1,17 +1,10 @@
-﻿
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <style>
-        tr:nth-child(even) {
-            background-color: lightgray;
-        }
-        
-    </style>
 </head>
 <body>
-    <table  id="page" class="table table-striped table-bordered">
+    <table id="page" class="table table-striped table-bordered">
         <thead style="background-color:royalblue">
             <tr>
                 <th>
@@ -43,10 +36,8 @@
     <script>
         $(document).ready(function () {
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "/Pagination/Display",
-                data: ' ',
-                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (response) {
                     var trHTML = '';
@@ -70,4 +61,3 @@
     </script>
 </body>
 </html>
-
